@@ -15,6 +15,10 @@
 This was created with:
 ```npm init playwright@latest```
 
+## Preinstallation - Mac
+[Install Node](https://formulae.brew.sh/formula/node)
+[Install TypeScript](https://formulae.brew.sh/formula/typescript)
+
 ## Installation
 ```
 git clone git@github.com:chrisrmead/posit-playwright.git
