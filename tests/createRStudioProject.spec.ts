@@ -5,6 +5,9 @@ test('create RStudio Project', async ({ page }) => {
 
   // this is a slow test
   test.setTimeout(120000);
+
+  const username = '';
+  const password = '';
   
   // Open main page
   await page.goto('https://posit.cloud/');
@@ -22,7 +25,7 @@ test('create RStudio Project', async ({ page }) => {
   await expect(page).toHaveTitle(/Posit - Log In/);
 
   // Fill username
-  await page.locator("[name='email']").fill("mead.robert.chris@gmail.com");
+  await page.locator("[name='email']").fill(username);
 
   // get continue button locator
   const continueButton = page.locator('.fullPageFormContainer').getByText('Continue');
@@ -33,7 +36,7 @@ test('create RStudio Project', async ({ page }) => {
   // enter password
   const passwordField = page.locator("[name='password']")
   await passwordField.waitFor();
-  await passwordField.fill('Test12345!');
+  await passwordField.fill(password);
 
   // get continue button locator
   const finalLoginButton = page.locator('.fullPageFormContainer').getByRole('button', { name: 'Log In' });
@@ -71,9 +74,9 @@ test('create RStudio Project', async ({ page }) => {
   const newRStudioProjectLocator = page.locator('.popupMenu').getByRole('button', { name: 'New RStudio Project' });
   await newRStudioProjectLocator.click();
 
-  const iFrameTableLocator = page.frameLocator('#contentIFrame').locator('.rstudio-themes-default');
-
-  await expect(iFrameTableLocator).toBeVisible({timeout: 120000});
+  // Await load of 
+  const iFrameThemesLocator = page.frameLocator('#contentIFrame').locator('.rstudio-themes-default');
+  await expect(iFrameThemesLocator).toBeVisible({timeout: 120000});
 });
 
 
