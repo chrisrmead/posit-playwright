@@ -17,6 +17,7 @@ This was created with:
 
 ## Preinstallation - Mac
 [Install Node](https://formulae.brew.sh/formula/node)
+
 [Install TypeScript](https://formulae.brew.sh/formula/typescript)
 
 ## Installation
